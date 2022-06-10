@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    
+    <div class="height">
+        {%for j in range(0, b_height):%}
+        {%if j%2 == 0: %}
+        <div class="width">
+            {%for i in range(0, b_width):%}
+                {%if i%2 == 0: %}
+                    <div class="whi" style="background-color: {{color_1}};"></div>
+                {%else:%}
+                    <div class="bla" style="background-color: {{color_2}};"></div>
+                {%endif%}
+            {%endfor%}
+        </div>
+        {%else:%}
+        <div class="width">
+            {%for i in range(0, b_width):%}
+                {%if i%2 == 1: %}
+                    <div class="whi" style="background-color: {{color_1}};"></div>
+                {%else:%}
+                    <div class="bla" style="background-color: {{color_2}};"></div>
+                {%endif%}
+            {%endfor%}
+        </div>
+        {%endif%}
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
