@@ -1,0 +1,21 @@
+
+
+
+.table{
+    display: flex;
+}
+
+.table > div{
+    padding: 0px;
+}
+
+.toptitle{
+    font-weight: 1000;
+}
+
+.table > div > h1{
+    margin: 0px;
+    margin-right: -1px;
+    margin-top: -1px;
+    border: 1px solid black;
+}
