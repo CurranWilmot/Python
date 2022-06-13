@@ -1,0 +1,17 @@
+h1{
+    color: blue;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    margin: 25px;
+}
