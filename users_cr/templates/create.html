@@ -8,7 +8,11 @@
     <link rel="stylesheet" type="text/css" href="{{url_for( 'static', filename='style.css')}}">
 </head>
 <body>
-    <h1>Add a New User</h1>
+    <div class="head">
+        <h1>Add a New User</h1>
+        <a href="/users">Home</a>
+    </div>
+    
     <form action="/users/new/create" method="POST">
         <div>
             <label for="fname">First Name:</label>

@@ -10,11 +10,19 @@ class Users:
         self.updated_at = data['updated_at']
     
     @classmethod
+    def get_one(cls, data):
+        query = "SELECT * "
+        query += "FROM users "
+        query += "WHERE id=%(u_id)s;"
+        print(query)
+        results = connectToMySQL('users').query_db(query, data)
+        print(results)
+        return cls(results[0])
+
+    @classmethod
     def get_all(cls):
         query = "SELECT * from users;"
-        print(query)
         results = connectToMySQL('users').query_db(query)
-        print(results)
         users = []
 
         for user in results:
@@ -25,5 +33,25 @@ class Users:
     def save_user(cls, data):
         query = "INSERT INTO users(first_name, last_name, email, created_at, updated_at) "
         query += "VALUES(%(fname)s, %(lname)s, %(email)s, NOW(), NOW());"
+        results = connectToMySQL('users').query_db(query, data)
+        return results
 
+    @classmethod
+    def update_user(cls, data):
+        query = "DELETE FROM users "
+        query += "WHERE id = %(u_id)s"
+        query += "SET "
+        return connectToMySQL('users').query_db(query, data)
+
+    @classmethod
+    def remove_user(cls, data):
+        query = "DELETE FROM users "
+        query += "WHERE id = %(u_id)s;"
+        return connectToMySQL('users').query_db(query, data)
+
+    @classmethod
+    def update_user(cls, data):
+        query = "UPDATE users "
+        query += "SET first_name = %(fname)s, last_name = %(lname)s, email = %(email)s "
+        query += "WHERE id = %(u_id)s;"
         return connectToMySQL('users').query_db(query, data)

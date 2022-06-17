@@ -15,3 +15,11 @@ td{
     padding: 10px;
 }
 
+ul{
+    list-style: none;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+}

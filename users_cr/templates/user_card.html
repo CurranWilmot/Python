@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for( 'static', filename='style.css')}}">
+</head>
+<body>
+    <div class="head">
+        <h1>User</h1>
+        <a href="/users">Home</a>
+    </div>
+    
+    <div>
+        <ul>
+            <li>Full Name: {{one_user.first_name}} {{one_user.last_name}}</li>
+            <li>Email:{{one_user.email}}</li>
+            <li>Created On:{{one_user.created_at}}</li>
+            <li>Last Updated On: {{one_user.updated_at}}</li>
+        </ul>
+    </div>
+    <P>
+        <a href="{{one_user.id}}/edit">Edit</a> | <a href="/users/{{one_user.id}}/delete">Delete</a>
+    </P>
+</body>
+</html>
