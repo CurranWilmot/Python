@@ -1,0 +1,96 @@
+h1{
+    color: blue;
+}
+
+.main_page{
+    display: flex;
+}
+
+.half_page{
+    border: 1px solid black;
+    padding: 20px;
+}
+
+th{
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+/* <!DOCTYPE html>
+<html lang="en">
+<head>                                 <!-- this part i get it -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar um novo </title>
+<style>
+body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+input[type=submit] {
+background-color: #52c49a;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: #45a049;
+}
+.container {
+width: 400px;
+border-radius: 5px;
+background-color: #9fd194;
+padding: 20px;
+margin-left: 200px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <form action="user/create">
+    <h3>Contact Form</h3>
+    <label for="country">DOJO</label>
+    <select id="country" name="country">
+    <option value="seattle">seattle</option>
+    <option value="san jose">san jose</option>
+    <option value="burbank">burbank</option>
+    <option value="oc">oc</option>
+    <option value="dallas">dallas</option>
+    <option value="boise">boise</option>
+    <option value="chicago">chicago</option>
+    <option value="dc">dc</option>
+    </select>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name">
+    <label for="lname">Age</label>
+    <input type="text" id="age" name="age" placeholder="Your age">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html> */
