@@ -1,0 +1,13 @@
+h1{
+    color: blue;
+}
+
+.wholepage{
+    display: flex;
+}
+
+.halfpage{
+    margin-right: 20px;
+    border: 1px solid black;
+    padding: 10px;
+}
