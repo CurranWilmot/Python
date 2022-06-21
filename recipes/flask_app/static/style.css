@@ -1,0 +1,41 @@
+h1{
+    color: blue;
+}
+
+.wholepage{
+    display: flex;
+}
+
+.halfpage{
+    margin-right: 20px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table{
+    align-content: center;
+}
+
+th{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+    border: 1px solid black;
+}
+
+#describebox{
+    height: 100px;
+    vertical-align: top;
+}
+
+#instructionsbox{
+    height: 200px;
+}

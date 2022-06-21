@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for( 'static', filename='style.css')}}">
+</head>
+<body>
+    <div class="wholepage">
+        <div class="halfpage">
+            <h1>Welcome {{one_user.first_name}}</h1>
+            <p>These are the recipes</p>
+            <table>
+                <thead>
+                        <th>Name</th>
+                        <th>Under 30 Minutes?</th>
+                        <th>Created by:</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for one_recipe in recipes%}
+                        <tr>
+                            <td>{{one_recipe.name}}</td>
+                            <td>
+                                {% if one_recipe.under_30_min == 1%}
+                                    Yes
+                                {%else%}
+                                    No
+                                {%endif%}
+                            </td>
+                            <td>
+                                {{one_recipe.first_name}}
+                            </td>
+                            <td><a href="/recipes/{{one_recipe.id}}">View instructions</a>
+                                 {%if one_recipe.user_id == one_user.id%}| 
+                                    <a href="/recipes/edit/{{one_recipe.id}}">Edit</a>  | 
+                                    <a href="/recipes/{{one_recipe.id}}/delete">Delete</a>
+                                {%endif%}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="halfpage">
+            <a href="/recipes/new">Create</a>
+            <a href="/logout">logout</a>
+        </div>
+    </div>
+</body>
+</html>

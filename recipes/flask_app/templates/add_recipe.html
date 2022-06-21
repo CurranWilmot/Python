@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for( 'static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Add New Recipe</h1>
+    <div class="wholepage">
+        <div class="halfpage">
+            <form action="/recipes/new/create" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                </div>
+                <div>
+                    <input type="text" name="name">
+                </div>
+                {% for message in get_flashed_messages( category_filter = ["error_name"] ): %}
+                    {{message}}
+                {% endfor %}
+                <div>
+                    <label for="description">Description:</label>
+                </div>
+                <div>
+                    <input type="text" name="description" id="describebox">
+                </div>
+                {% for message in get_flashed_messages( category_filter = ["error_description"] ): %}
+                    {{message}}
+                {% endfor %}
+                <div>
+                    <label for="instructions">Instructions:</label>
+                </div>
+                <div>
+                    <input type="text" name="instructions" id="instructionsbox">
+                </div>
+                {% for message in get_flashed_messages( category_filter = ["error_instructions"] ): %}
+                    {{message}}
+                {% endfor %}
+        </div>
+        <div class="halfpage">
+            <a href="/dashboard/{{one_user.id}}">Dashboard</a>
+            <a href="/logout">logout</a>
+            <div>
+                <label for="date_made_on">Date Made On:</label>
+            </div>
+            <div>
+                <input type="date" name="date_made_on">
+            </div>
+            {% for message in get_flashed_messages( category_filter = ["error_date_made_on"] ): %}
+                    {{message}}
+                {% endfor %}
+            <div>
+                <label for="under_30_min">Under 30 Minutes?</label>
+            </div>
+            <div>
+                <input type="radio" id="toggle" name="toggle" value="1" unchecked>
+                <label for="toggle-off">Yes</label>
+                <input type="radio" id="toggle" name="toggle" value="0" unchecked>
+                <label for="toggle-off">No</label>
+            </div>
+            {% for message in get_flashed_messages( category_filter = ["error_under_30_min"] ): %}
+                    {{message}}
+                {% endfor %}
+            <div>
+                <input type="Submit" value="Create">
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
